@@ -16,7 +16,7 @@ character["sur name"] = "Stark";
 // - Add a new key `title` with the value title of the character i.e "Lady of Winterfell"
 character.title = "Lady of Winterfell";
 // - Add another property named `greet` and value should be a function when called should alert `I am [NAME HERE] and my title is [TITLE HERE]`.
-character.greet =  () => alert( `I am Ravindra Singh and my title is engineer` ); 
+character.greet =  () => alert( `I am ${character.characterName} and my title is ${character.title}` ); 
 // - Add a new property to the character object named `isFemale` and value will be `true`
 character.isFemale = true;
 // - Execute the function stored in the greet key of the character object
@@ -28,18 +28,17 @@ character.greet();
 //  - Add a new property in the character object `isAdult`. The value will be true if age is greater than 18 or it will be false.
 character.isAdult = age > 18 ? true : true ;
 // - Add a new method (function inside objects are called methods) named `changeIsAdult`. When called should be able to flip the value of `isAdult` from true to false and false to true.
-
+character.changeIsAdult = () => !character.isAdult;
 // - Add a new key with the name stored in variable `keyName` defined below i.e `playedBy` (use [] for computed property) and the value of "Maisie Williams"
 
 let keyName = 'playedBy';
-
-character["keyName"] = "Maisie Williams";
+character[keyName] = "Maisie Williams";
 
 // - Using `alert` alert the value stored in key you added above `keyName` use the variable name to access
-alert(character.keyName);
+alert(character[keyName]);
 // - Using the function `console.log` log the value of the key `42`. You don't have to add the key
 console.log(character[42]);
 // - Add a new key named `totalSeasons` with the value of `1 + 2 + 3 + 2`. Use this expression
-character.totalSeason = `${1 + 2 + 3 + 2}`;
+character.totalSeason = 1 + 2 + 3 + 2;
 // - Access the value of the key `totalSeason` (it should be 8)
 Number(character.totalSeason);
