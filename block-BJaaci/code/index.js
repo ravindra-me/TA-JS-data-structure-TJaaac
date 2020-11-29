@@ -59,9 +59,8 @@ for (const genre of movies[2].genres) {
   console.log(genre);
 }
 // 13. Log all the genres of the first movie
-for (const genre of movies[0].genres) {
-  console.log(genre);
-}
+console.log( movies[0].genres) 
+
 // 14. Log the first genres of the first movie
 console.log(movies[0].genres[0])
 // 15. Log the first genres of the second movie
@@ -79,18 +78,12 @@ for (const genre of movies[1].genres) {
   console.log(genre);
 }
 // 20. Log if the first actor of the first movie is `Rachel McAdams` or not (You have to log true or false)
-for (const actor of movies[0].actors) {
-  console.log(actor==="Rachel McAdams" ? true : false);
-}
 console.log((movies[0].actors[0]==="Rachel McAdams") ? true :false);
 // 21. Log if the second actor (index 1) of the second movie is `Natalie Portman` or not (You have to log true or false)
-for (const actor of movies[1].actors) {
-  console.log(actor==="Natalie Portman" ? true : false);
-}
 console.log((movies[1].actors[1]==="Natalie Portman") ? true :false);
 // 22. Log if the year of all three movies is greater than `2017` or not one by one. (Log true or false)
 for (const movie of movies ) {
- console.log(movie.year==="2017" ? true :false);
+ console.log(movie.year > 2017 ? true :false);
 }
 // 23. Log the title of all three movies one by one.
 for (const movie of movies ) {
@@ -100,16 +93,42 @@ for (const movie of movies ) {
 console.log(movies[0].title==="Hannah");
 // 25. Log the number of actors in all three movies one by one
 for (const movie of movies ) {
-  console.log(movie.actors.length);
+  for (const actor of movie.actors) {
+    console.log(actor , "actors");
+  }
  }
 // 26. Log the number of genres in all three movies one by one
 for (const movie of movies ) {
-  console.log(movie.genres.length);
+  console.log(movie.genres.length, "length");
  }
 // 27. Log the name of all the movies with more than 1 genre
-
+for (const movie of movies ) {
+  if(movie.genres.length >1){
+    console.log(movie.title);
+  };
+ }
 // 28. Log the name of all the movies with more than 1 actors
-
+for (const movie of movies ) {
+  if(movie.actors.length >1){
+    console.log(movie.title , "name");
+  };
+ }
 // 29. Log the name of all the movies with exactly 3 actors
-
+for (const movie of movies ) {
+  if(movie.actors.length ===3){
+    console.log(movie.title , "name");
+  };
+ }
 // 30. Log the name of all the movies with year `2018`
+for (const movie of movies ) {
+  if(movie.year == 2018){
+    console.log(movie.title , "name");
+  };
+ }
+
+//  31 store the title of all the movies in an array named `allTitles`
+let allTitles = [];
+for (const movie of movies) {
+  allTitles.push(movie.title);
+}
+console.log(allTitles);
