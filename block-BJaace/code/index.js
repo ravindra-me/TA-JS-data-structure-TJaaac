@@ -1,9 +1,9 @@
 // 1. Declare an empty array and store it in a variable.
 let arr = [];
 // 2. Now check the type of empty array you declared above.
-typeof arr
+console.log(typeof arr);
 // 3. Create an array named `colors` that contains five different names of colors as strings.
-colors = ['red', 'green', 'yellow', 'blue', 'gray'];
+let colors = ['red', 'green', 'yellow', 'blue', 'gray'];
 // 4. Access the first color in the array and print it to the console using `console.log()`
 console.log(colors[0]);
 // 5. Access the third color in the array and print it to the console using `console.log()`
@@ -31,7 +31,7 @@ delete colors[colors.length-2];
 // 16. Write a for loop to iterate through every element in the array and print each element to the console.
 for(let i = 0 ; i < colors.length ; i++ ){console.log(colors[i])};
 // 17. Copying from that loop you just wrote, modify it to print every color's value and every color's index in this format: 3, purple or 0, blue etc.
-for(let i = 0 ; i < colors.length ; i++ ){console.log(`${i},${colors[i]}`)};
+for(let i = 0 ; i < colors.length ; i++ ){console.log(`${i}:${colors[i]}`)};
 // 18. Write a for..of loop to iterate through every element in the array and print each element to the console.
 for (const color of colors) { console.log(color);}
 // 19. Create a variable named lastColor that will always point to the last element of the colors array, no matter how many colors are in the list. (Hint: make use of the array's length property for this!)
