@@ -94,15 +94,23 @@ console.log(revert(['Ryan', 'John', 'Bran'])); //['Bran', 'John', 'Ryan']
     clear(['a', undefined, 'd', 0,  'c', 'b']); // ['b', 'c', 'd', 'a']
     clear(['Ryan', null, 0,  'John', 'Bran']); //['Bran', 'John', 'Ryan']
 */
-
-function clear() {
-  // your code
+function isUnwanted(value){
+  return value == false || value == undefined || value==0 || value == null || value == '';
+}
+function clear(arr) {
+  let final = [];
+  for (const value of arr) {
+    if(!isUnwanted(value)){
+      final.push(value);
+    }    
+  }
+  return final
 }
 
 // Uncomment the code below and test the output
-// console.log(clear([1, 2, 3, 4, '', 0, null, undefined])); // [4, 3, 2, 1]
-// console.log(clear(['a', undefined, 'd', 0, 'c', 'b'])); // ['b', 'c', 'd', 'a']
-// console.log(clear(['Ryan', null, 0, 'John', 'Bran'])); //['Bran', 'John', 'Ryan']
+console.log(clear([1, 2, 3, 4, '', 0, null, undefined])); // [4, 3, 2, 1]
+console.log(clear(['a', undefined, 'd', 0, 'c', 'b'])); // ['b', 'c', 'd', 'a']
+console.log(clear(['Ryan', null, 0, 'John', 'Bran'])); //['Bran', 'John', 'Ryan']
 
 /*
 
@@ -120,7 +128,7 @@ function clear() {
 
 function arrayToObj(array) {
   let obj = {};
-  for(let i = 0 ; i < array.lenght; i++){
+  for(let i = 0 ; i < array.length; i++){
     obj[i]= array[i];
   }
   return obj;
