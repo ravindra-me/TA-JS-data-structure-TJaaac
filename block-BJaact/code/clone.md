@@ -10,12 +10,12 @@ let person2 = person;
 
 person.firstName = 'Arya';
 
-console.log(person2.firstName); // output
-console.log(person.firstName); // output
-console.log(person.lastName); // output
-console.log(person == person2); // output
-console.log(person === person2); // output
-console.log(person.lastName === person2.lastName); // output
+console.log(person2.firstName); // "Arya"
+console.log(person.firstName); // "Arya"
+console.log(person.lastName); // "Doe"
+console.log(person == person2); // ture
+console.log(person === person2); // true
+console.log(person.lastName === person2.lastName); // true  
 ```
 
 2. Write the output with reason:
@@ -37,17 +37,17 @@ let personTwo = { ...person };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // "Arya"
+console.log(person.firstName); // "John"
+console.log(personTwo.lastName); // "Doe"
+console.log(person.firstName === personTwo.firstName); // false
+console.log(person == personTwo); // false because refrence diffrent memory location
+console.log(person === personTwo); // false
+console.log(person.address === personTwo.address); // true
+console.log(person.address == personTwo.address); // true
+console.log(personTwo.address.city); // "San Josh"
+console.log(person.address.city); // "San Josh"
+console.log(person.address.city == personTwo.address.city); // true copy by refrence same memory location
 ```
 
 3. Write the output with reason:
@@ -69,17 +69,17 @@ let personTwo = { ...person, address: { ...person.address } };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // "John"
+console.log(person.firstName); // "Arya"
+console.log(personTwo.lastName); // "Doe"
+console.log(person.firstName === personTwo.firstName); // false diffrent value and diffrent memory location
+console.log(person == personTwo); // false
+console.log(person === personTwo); // false
+console.log(person.address === personTwo.address); // false
+console.log(person.address == personTwo.address); // false because the 
+console.log(personTwo.address.city); // "San Jose"
+console.log(person.address.city); // "San Jose"
+console.log(person.address.city == personTwo.address.city); // true belong same memory location
 ```
 
 4. Clone the `blogs` variable into a new variable named `clonedBlogs`
@@ -104,6 +104,9 @@ let blogs = [
 ];
 
 // Your code goes here
+
+let clonedBlogs = [...blogs] 
+
 ```
 
 5. Clone the `question` variable into a new variable named `questionClone`
@@ -156,6 +159,9 @@ var allBlogs = {
 };
 
 // Your code goes here
+
+let allBlogsClone = {...allBlogs}
+
 ```
 
 7. Clone the `person` variable into a new variable named `clonedPerson`
@@ -189,13 +195,16 @@ let person = [
 ];
 
 // Your code goes here
+
+let clonedPerson = [...person]
+
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
 
 ```js
-function cloneObject() {
-  // your code
+function cloneObject(user) {
+  return {...user}
 }
 
 // Run the test below to check your function
